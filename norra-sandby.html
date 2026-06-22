@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norra Sandby 4283 — Idyll från 1800-talet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1A17;
+    --parchment:#F6F1E7;
+    --parchment-deep:#EFE7D8;
+    --brick:#8C3A2B;
+    --brass:#A98959;
+    --sage:#4B5D45;
+    --paper:#FFFDF8;
+    --line: rgba(27,26,23,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:11px;
+    font-weight:600;
+    color:var(--brick);
+  }
+  img{display:block; width:100%; height:100%; object-fit:cover;}
+  a{color:inherit;}
+
+  /* ===== MASTHEAD ===== */
+  .masthead{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 5vw;
+    background:rgba(246,241,231,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .masthead .title{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:18px;
+    letter-spacing:0.02em;
+  }
+  .masthead .title small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:10px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--brick);
+    font-weight:600;
+    margin-top:2px;
+  }
+  .langs{display:flex; gap:6px;}
+  .langs button{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:7px 12px;
+    cursor:pointer;
+    border-radius:2px;
+    transition:all .2s;
+  }
+  .langs button.active{
+    background:var(--ink);
+    color:var(--parchment);
+    border-color:var(--ink);
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    height:92vh;
+    min-height:560px;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%; height:100%; object-fit:cover;
+    filter:saturate(1.04);
+  }
+  .hero::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,19,16,0.05) 0%, rgba(20,19,16,0.15) 45%, rgba(20,19,16,0.78) 100%);
+  }
+  .hero-content{
+    position:absolute; left:0; bottom:0; right:0;
+    padding:0 5vw 56px;
+    color:var(--paper);
+    z-index:2;
+  }
+  .hero-content .eyebrow{color:#E7B58C; margin-bottom:14px; display:block;}
+  .hero-content h1{
+    font-size:clamp(40px,7vw,92px);
+    font-weight:400;
+    line-height:0.98;
+    letter-spacing:-0.01em;
+  }
+  .hero-content .sub{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(16px,2vw,22px);
+    margin-top:12px;
+    color:#EDE3D2;
+  }
+  .stamp{
+    position:absolute;
+    top:38px; right:5vw;
+    width:124px; height:124px;
+    border:1.5px solid #EDE3D2;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(8deg);
+    z-index:3;
+    color:#F6F1E7;
+    text-align:center;
+  }
+  .stamp .price{
+    font-family:'Fraunces',serif;
+    font-size:21px;
+    line-height:1.15;
+  }
+  .stamp .price small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:9px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    margin-top:4px;
+    opacity:0.85;
+  }
+
+  /* ===== SECTION SHELL ===== */
+  .wrap{max-width:1180px; margin:0 auto; padding:0 5vw;}
+  section{padding:110px 0;}
+  .section-tight{padding:70px 0;}
+  .divider{
+    width:100%; height:1px; background:var(--line);
+  }
+
+  /* ===== INTRO ===== */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:80px;
+    align-items:start;
+  }
+  .intro-grid p{
+    font-size:18px;
+    color:rgba(27,26,23,0.85);
+  }
+  .intro-grid p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:74px;
+    line-height:0.78;
+    float:left;
+    margin-right:10px;
+    margin-top:4px;
+    color:var(--brick);
+    font-weight:500;
+  }
+  .intro-grid p + p{margin-top:20px;}
+  .facts{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:34px 32px;
+  }
+  .facts .eyebrow{display:block; margin-bottom:18px;}
+  .fact-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .fact-row:last-child{border-bottom:none;}
+  .fact-row .label{font-size:13px; color:rgba(27,26,23,0.6);}
+  .fact-row .value{font-family:'Fraunces',serif; font-size:20px;}
+
+  /* ===== HEADERS ===== */
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:46px; gap:24px; flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:clamp(30px,4vw,46px);
+    font-weight:400;
+  }
+  .section-head .num{
+    font-family:'Fraunces',serif; font-style:italic; font-size:15px; color:var(--brick);
+  }
+
+  /* ===== GABLE / PLAN ===== */
+  .plan-grid{
+    display:grid; grid-template-columns:1.4fr 1fr; gap:24px;
+  }
+  .plate{
+    background:var(--paper); border:1px solid var(--line); padding:18px;
+  }
+  .plate img{height:520px;}
+  .plate.small img{height:340px;}
+  .caption{
+    margin-top:14px; font-size:13px; color:rgba(27,26,23,0.65);
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .caption .tag{
+    font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.14em; font-size:10px; color:var(--brass); font-weight:600;
+  }
+
+  /* ===== EDITORIAL GRID (3 img) ===== */
+  .ed-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .ed-grid .tall img{height:430px;}
+  .ed-grid .item:nth-child(2){margin-top:46px;}
+
+  .quote-block{
+    margin:64px 0 0;
+    padding:46px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+  .quote-block p{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:400;
+    font-size:clamp(22px,3vw,34px);
+    max-width:760px; margin:0 auto;
+    color:var(--sage);
+  }
+
+  /* ===== TWO IMG ROW ===== */
+  .two-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .two-grid img{height:380px;}
+  .four-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .four-grid img{height:260px;}
+
+  /* ===== CTA / FOOTER ===== */
+  .cta{
+    background:var(--ink); color:var(--parchment);
+    text-align:center;
+  }
+  .cta .eyebrow{color:#D9A57C;}
+  .cta h2{font-size:clamp(32px,5vw,58px); font-weight:400; margin:18px 0 22px;}
+  .cta p{max-width:560px; margin:0 auto 36px; color:rgba(246,241,231,0.75); font-size:17px;}
+  .btn{
+    display:inline-block;
+    background:var(--brick); color:#fff;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    padding:18px 38px;
+    text-decoration:none;
+    border-radius:2px;
+    transition:background .2s;
+  }
+  .btn:hover{background:#A4452F;}
+
+  footer{
+    padding:40px 5vw 50px;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:14px;
+    font-size:12px; color:rgba(246,241,231,0.55);
+    background:var(--ink);
+    border-top:1px solid rgba(246,241,231,0.12);
+  }
+
+  @media(max-width:860px){
+    .intro-grid, .plan-grid, .ed-grid, .two-grid, .four-grid{
+      grid-template-columns:1fr;
+    }
+    .ed-grid .item:nth-child(2){margin-top:0;}
+    .stamp{width:96px; height:96px; top:22px;}
+    section{padding:64px 0;}
+    .plate img{height:320px;}
+  }
+
+  :focus-visible{outline:2px solid var(--brick); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="title">Norra Sandby <small>Skånsk lantegendom · sedan 1800-talet</small></div>
+  <div class="langs">
+    <button data-lang="sv" class="active">SV</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="de">DE</button>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="imgs/hero.jpeg" alt="Norra Sandby 4283, rödfärgad gård med vit himmel">
+  <div class="stamp">
+    <div class="price">155 000<small>EUR</small></div>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Norra Sandby 4283 · Skåne</span>
+    <h1 data-i18n="hero.h1">En idyll<br>från 1800-talet</h1>
+    <p class="sub" data-i18n="hero.sub">Bålverk av ek, stengärden och en svårslagen vy över öppna marker.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap intro-grid">
+    <div>
+      <p data-i18n="intro.p1">Välkommen till Norra Sandby och denna fastighet med anor från 1800-talet. Fastigheten ligger på en stor naturtomt omringad av vackra stengärden, med fri vy över öppna marker. Stommen är byggd av bålverk i ek, med rejäla takbjälkar och tre decimeter breda plankgolv som enligt uppgift är 200 år gamla.</p>
+      <p data-i18n="intro.p2">Huset har moderniserats med varsam hand: all el är omdragen, avloppet är nytt och ett papptak har lagts de senaste åren — samtidigt som karaktären bevarats med flera öppna eldstäder, en bevarad bakugn och tre decimeter breda golvplank.</p>
+    </div>
+    <div class="facts">
+      <span class="eyebrow" data-i18n="facts.title">Fakta</span>
+      <div class="fact-row"><span class="label" data-i18n="facts.price">Utgångspris</span><span class="value">155 000 €</span></div>
+      <div class="fact-row"><span class="label" data-i18n="facts.rooms">Rum &amp; kök</span><span class="value" data-i18n="facts.roomsval">4, varav 2 sovrum</span></div>
+      <div class="fact-row"><span class="label" data-i18n="facts.bath">Badrum</span><span class="value">2</span></div>
+      <div class="fact-row"><span class="label" data-i18n="facts.living">Boarea</span><span class="value">80 m²</span></div>
+      <div class="fact-row"><span class="label" data-i18n="facts.aux">Biarea</span><span class="value">20 m²</span></div>
+      <div class="fact-row"><span class="label" data-i18n="facts.plot">Tomtarea</span><span class="value">6 514 m²</span></div>
+      <div class="fact-row"><span class="label" data-i18n="facts.form">Boendeform</span><span class="value" data-i18n="facts.formval">Fritidshus, friköpt</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="soul.h2">Husets själ</h2>
+      <span class="num" data-i18n="soul.num">I — Arkitektur</span>
+    </div>
+    <div class="plan-grid">
+      <div class="plate">
+        <img src="imgs/gable.jpeg" alt="Gaveln med gröna fönster och stengrund">
+        <div class="caption"><span data-i18n="soul.cap1">Gaveln med gröna originalfönster och grund av kallmurad sten.</span><span class="tag">1800-tal</span></div>
+      </div>
+      <div class="plate small">
+        <img src="imgs/floorplan.jpeg" alt="Planritning över huset" style="object-fit:contain; background:#fff;">
+        <div class="caption"><span data-i18n="soul.cap2">Planlösning, 80 m² boyta i ett plan.</span><span class="tag" data-i18n="soul.tag2">Planritning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="living.h2">Allrum med utsikt</h2>
+      <span class="num" data-i18n="living.num">II — Vardagsrum</span>
+    </div>
+    <div class="ed-grid">
+      <div class="item tall plate">
+        <img src="imgs/loft.jpeg" alt="Loft med takbjälkar">
+        <div class="caption"><span data-i18n="living.cap1">Loft för ytterligare sängplatser eller läshörna.</span></div>
+      </div>
+      <div class="item tall plate">
+        <img src="imgs/fireplace.jpeg" alt="Eldstad i vardagsrummet">
+        <div class="caption"><span data-i18n="living.cap2">Ny kamin i allrummet.</span></div>
+      </div>
+      <div class="item tall plate">
+        <img src="imgs/atelje.jpeg" alt="Ateljé med högt i tak och stora fönster">
+        <div class="caption"><span data-i18n="living.cap3">Ateljén — högt i tak, ljust och fritt.</span></div>
+      </div>
+    </div>
+    <div class="quote-block">
+      <p data-i18n="living.quote">"En ateljé med många möjligheter och en svårslagen vy över Norra Sandbys öppna marker."</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="kitchen.h2">Köket</h2>
+      <span class="num" data-i18n="kitchen.num">III — Mat &amp; hjärta</span>
+    </div>
+    <div class="ed-grid">
+      <div class="item plate">
+        <img src="imgs/vedspis.jpeg" alt="Bevarad vedspis i köket">
+        <div class="caption"><span data-i18n="kitchen.cap1">Bevarad vedspis och bakugn.</span></div>
+      </div>
+      <div class="item plate">
+        <img src="imgs/kok.jpeg" alt="Nyrenoverat kök med rutigt golv">
+        <div class="caption"><span data-i18n="kitchen.cap2">Nyrenoverat kök, kyl, frys och diskmaskin.</span></div>
+      </div>
+      <div class="item plate">
+        <img src="imgs/forkladen.jpeg" alt="Förkläden på timrad vägg">
+        <div class="caption"><span data-i18n="kitchen.cap3">Gammal timmervägg i förrådet.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--parchment-deep);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="garden.h2">Trädgården</h2>
+      <span class="num" data-i18n="garden.num">IV — Jord &amp; frukt</span>
+    </div>
+    <div class="ed-grid">
+      <div class="item plate"><img src="imgs/bjornbar.jpeg" alt="Björnbär på buske"></div>
+      <div class="item plate"><img src="imgs/vindruvor.jpeg" alt="Vindruvor mot rödmålad vägg"></div>
+      <div class="item plate"><img src="imgs/apple.jpeg" alt="Äpplen i fruktträd"></div>
+    </div>
+    <div class="quote-block" style="border-color:rgba(27,26,23,0.16);">
+      <p data-i18n="garden.quote">"Bördig mark med frukt och bär, på en tomt om dryga 6 500 kvadratmeter."</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="terrace.h2">Altaner &amp; utsikt</h2>
+      <span class="num" data-i18n="terrace.num">V — Ute</span>
+    </div>
+    <div class="two-grid">
+      <div class="plate"><img src="imgs/altan-bak.jpeg" alt="Altan på baksidan av huset"><div class="caption"><span data-i18n="terrace.cap1">30 kvm altan på baksidan — bästa kvällssolen.</span></div></div>
+      <div class="plate"><img src="imgs/altan-fram.jpeg" alt="Altan på framsidan av huset"><div class="caption"><span data-i18n="terrace.cap2">Altan på framsidan, morgonsol.</span></div></div>
+    </div>
+    <div class="four-grid" style="margin-top:24px;">
+      <div class="plate"><img src="imgs/angar.jpeg" alt="Öppna ängar i solnedgång"></div>
+      <div class="plate"><img src="imgs/dimma1.jpeg" alt="Dimma över ängarna i gryningen"></div>
+      <div class="plate"><img src="imgs/dimma2.jpeg" alt="Dimma och rosa himmel"></div>
+      <div class="plate"><img src="imgs/altan-bak2.jpeg" alt="Dukat bord på altanen"></div>
+    </div>
+    <div class="quote-block">
+      <p data-i18n="terrace.quote">"Fria vyer med ängar som närmaste grannar."</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="bath.h2">Badrum</h2>
+      <span class="num" data-i18n="bath.num">VI — Renoverat 2025</span>
+    </div>
+    <div class="two-grid">
+      <div class="plate"><img src="imgs/dusch.jpeg" alt="Dusch med utgång till altan"><div class="caption"><span data-i18n="bath.cap1">Dusch och wc med utgång till morgonsolen.</span></div></div>
+      <div class="plate"><img src="imgs/wc.jpeg" alt="Wc och tvättstuga"><div class="caption"><span data-i18n="bath.cap2">Wc och tvättstuga, nyrenoverad 2025.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="cta.eyebrow">Boka visning</span>
+    <h2 data-i18n="cta.h2">En egendom man<br>blir trogen.</h2>
+    <p data-i18n="cta.p">Norra Sandby 4283 visas efter överenskommelse. Hör av dig för foton, dokumentation eller en privat visning.</p>
+    <a class="btn" href="mailto:info@norrasandby.se?subject=Visning%20Norra%20Sandby%204283" data-i18n="cta.btn">Hör av dig</a>
+  </div>
+</section>
+
+<footer>
+  <span data-i18n="footer.left">Norra Sandby 4283 · Skåne, Sverige</span>
+  <span data-i18n="footer.right">Utgångspris 155 000 € · Fritidshus, friköpt</span>
+</footer>
+
+<script>
+const i18n = {
+  sv: {
+    "hero.eyebrow":"Norra Sandby 4283 · Skåne",
+    "hero.h1":"En idyll<br>från 1800-talet",
+    "hero.sub":"Bålverk av ek, stengärden och en svårslagen vy över öppna marker.",
+    "intro.p1":"Välkommen till Norra Sandby och denna fastighet med anor från 1800-talet. Fastigheten ligger på en stor naturtomt omringad av vackra stengärden, med fri vy över öppna marker. Stommen är byggd av bålverk i ek, med rejäla takbjälkar och tre decimeter breda plankgolv som enligt uppgift är 200 år gamla.",
+    "intro.p2":"Huset har moderniserats med varsam hand: all el är omdragen, avloppet är nytt och ett papptak har lagts de senaste åren — samtidigt som karaktären bevarats med flera öppna eldstäder, en bevarad bakugn och tre decimeter breda golvplank.",
+    "facts.title":"Fakta",
+    "facts.price":"Utgångspris",
+    "facts.rooms":"Rum & kök",
+    "facts.roomsval":"4, varav 2 sovrum",
+    "facts.bath":"Badrum",
+    "facts.living":"Boarea",
+    "facts.aux":"Biarea",
+    "facts.plot":"Tomtarea",
+    "facts.form":"Boendeform",
+    "facts.formval":"Fritidshus, friköpt",
+    "soul.h2":"Husets själ",
+    "soul.num":"I — Arkitektur",
+    "soul.cap1":"Gaveln med gröna originalfönster och grund av kallmurad sten.",
+    "soul.cap2":"Planlösning, 80 m² boyta i ett plan.",
+    "soul.tag2":"Planritning",
+    "living.h2":"Allrum med utsikt",
+    "living.num":"II — Vardagsrum",
+    "living.cap1":"Loft för ytterligare sängplatser eller läshörna.",
+    "living.cap2":"Ny kamin i allrummet.",
+    "living.cap3":"Ateljén — högt i tak, ljust och fritt.",
+    "living.quote":"\u201dEn ateljé med många möjligheter och en svårslagen vy över Norra Sandbys öppna marker.\u201d",
+    "kitchen.h2":"Köket",
+    "kitchen.num":"III — Mat & hjärta",
+    "kitchen.cap1":"Bevarad vedspis och bakugn.",
+    "kitchen.cap2":"Nyrenoverat kök, kyl, frys och diskmaskin.",
+    "kitchen.cap3":"Gammal timmervägg i förrådet.",
+    "garden.h2":"Trädgården",
+    "garden.num":"IV — Jord & frukt",
+    "garden.quote":"\u201dBördig mark med frukt och bär, på en tomt om dryga 6 500 kvadratmeter.\u201d",
+    "terrace.h2":"Altaner & utsikt",
+    "terrace.num":"V — Ute",
+    "terrace.cap1":"30 kvm altan på baksidan — bästa kvällssolen.",
+    "terrace.cap2":"Altan på framsidan, morgonsol.",
+    "terrace.quote":"\u201dFria vyer med ängar som närmaste grannar.\u201d",
+    "bath.h2":"Badrum",
+    "bath.num":"VI — Renoverat 2025",
+    "bath.cap1":"Dusch och wc med utgång till morgonsolen.",
+    "bath.cap2":"Wc och tvättstuga, nyrenoverad 2025.",
+    "cta.eyebrow":"Boka visning",
+    "cta.h2":"En egendom man<br>blir trogen.",
+    "cta.p":"Norra Sandby 4283 visas efter överenskommelse. Hör av dig för foton, dokumentation eller en privat visning.",
+    "cta.btn":"Hör av dig",
+    "footer.left":"Norra Sandby 4283 · Skåne, Sverige",
+    "footer.right":"Utgångspris 155 000 € · Fritidshus, friköpt"
+  },
+  en: {
+    "hero.eyebrow":"Norra Sandby 4283 · Skåne, Sweden",
+    "hero.h1":"A 19th-century<br>idyll",
+    "hero.sub":"Oak timber frame, stone walls, and an unrivalled view over open meadows.",
+    "intro.p1":"Welcome to Norra Sandby and this property with roots in the 1800s. Set on a large natural plot surrounded by beautiful stone walls, with open views across the fields. The frame is built from solid oak timber, with sturdy roof beams and twelve-inch-wide plank floors said to be 200 years old.",
+    "intro.p2":"The house has been modernised with a careful hand: the wiring is new, the drainage has been replaced and a new roof added in recent years — while its character remains, with several open hearths, a preserved bread oven and the original wide-plank floors.",
+    "facts.title":"Facts",
+    "facts.price":"Asking price",
+    "facts.rooms":"Rooms & kitchen",
+    "facts.roomsval":"4, incl. 2 bedrooms",
+    "facts.bath":"Bathrooms",
+    "facts.living":"Living area",
+    "facts.aux":"Ancillary area",
+    "facts.plot":"Plot area",
+    "facts.form":"Tenure",
+    "facts.formval":"Leisure home, freehold",
+    "soul.h2":"The soul of the house",
+    "soul.num":"I — Architecture",
+    "soul.cap1":"The gable with original green windows and a dry-stone foundation.",
+    "soul.cap2":"Floor plan, 80 m² single-storey living space.",
+    "soul.tag2":"Floor plan",
+    "living.h2":"A living room with a view",
+    "living.num":"II — Living spaces",
+    "living.cap1":"A loft for extra beds or a reading nook.",
+    "living.cap2":"A new wood stove in the living room.",
+    "living.cap3":"The studio — tall ceilings, light and open.",
+    "living.quote":"\u201cA studio full of possibilities, with an unbeatable view across Norra Sandby's open fields.\u201d",
+    "kitchen.h2":"The kitchen",
+    "kitchen.num":"III — Food & heart",
+    "kitchen.cap1":"A preserved wood-fired stove and bread oven.",
+    "kitchen.cap2":"A newly renovated kitchen with fridge, freezer and dishwasher.",
+    "kitchen.cap3":"Old timber wall in the pantry.",
+    "garden.h2":"The garden",
+    "garden.num":"IV — Earth & fruit",
+    "garden.quote":"\u201cFertile ground with fruit and berries, on a plot of just over 6,500 square metres.\u201d",
+    "terrace.h2":"Terraces & views",
+    "terrace.num":"V — Outdoors",
+    "terrace.cap1":"A 30 m² terrace at the back — best evening sun.",
+    "terrace.cap2":"Front terrace, morning sun.",
+    "terrace.quote":"\u201cOpen views, with meadows as your nearest neighbours.\u201d",
+    "bath.h2":"Bathrooms",
+    "bath.num":"VI — Renovated 2025",
+    "bath.cap1":"Shower and WC opening onto the morning sun.",
+    "bath.cap2":"WC and laundry room, renovated in 2025.",
+    "cta.eyebrow":"Book a viewing",
+    "cta.h2":"A property you'll<br>stay loyal to.",
+    "cta.p":"Norra Sandby 4283 is shown by appointment. Get in touch for photos, documentation or a private viewing.",
+    "cta.btn":"Get in touch",
+    "footer.left":"Norra Sandby 4283 · Skåne, Sweden",
+    "footer.right":"Asking price €155,000 · Leisure home, freehold"
+  },
+  de: {
+    "hero.eyebrow":"Norra Sandby 4283 · Schonen, Schweden",
+    "hero.h1":"Eine Idylle<br>aus dem 19. Jahrhundert",
+    "hero.sub":"Eichenholzrahmen, Steinmauern und ein unvergleichlicher Blick über offene Felder.",
+    "intro.p1":"Willkommen in Norra Sandby, einem Anwesen mit Wurzeln im 19. Jahrhundert. Es liegt auf einem großen Naturgrundstück, umgeben von schönen Steinmauern, mit freiem Blick über offene Felder. Der Rahmen besteht aus massivem Eichenholz, mit kräftigen Dachbalken und 30 cm breiten Dielenböden, die angeblich 200 Jahre alt sind.",
+    "intro.p2":"Das Haus wurde behutsam modernisiert: Die Elektrik ist neu verlegt, der Abfluss erneuert und in den letzten Jahren ein neues Dach aufgebracht — während der Charakter erhalten blieb, mit mehreren offenen Feuerstellen, einem erhaltenen Backofen und den ursprünglichen breiten Dielenböden.",
+    "facts.title":"Fakten",
+    "facts.price":"Kaufpreis",
+    "facts.rooms":"Zimmer & Küche",
+    "facts.roomsval":"4, davon 2 Schlafzimmer",
+    "facts.bath":"Badezimmer",
+    "facts.living":"Wohnfläche",
+    "facts.aux":"Nebenfläche",
+    "facts.plot":"Grundstücksfläche",
+    "facts.form":"Eigentumsform",
+    "facts.formval":"Freizeithaus, Eigentum",
+    "soul.h2":"Die Seele des Hauses",
+    "soul.num":"I — Architektur",
+    "soul.cap1":"Der Giebel mit grünen Originalfenstern und einem Trockenmauer-Fundament.",
+    "soul.cap2":"Grundriss, 80 m² Wohnfläche auf einer Ebene.",
+    "soul.tag2":"Grundriss",
+    "living.h2":"Ein Wohnraum mit Aussicht",
+    "living.num":"II — Wohnbereiche",
+    "living.cap1":"Ein Dachboden für zusätzliche Betten oder eine Leseecke.",
+    "living.cap2":"Ein neuer Kaminofen im Wohnraum.",
+    "living.cap3":"Das Atelier — hohe Decken, hell und offen.",
+    "living.quote":"\u201eEin Atelier voller Möglichkeiten, mit einem unschlagbaren Blick über die offenen Felder von Norra Sandby.\u201c",
+    "kitchen.h2":"Die Küche",
+    "kitchen.num":"III — Essen & Herz",
+    "kitchen.cap1":"Ein erhaltener Holzofen und Backofen.",
+    "kitchen.cap2":"Eine neu renovierte Küche mit Kühlschrank, Gefrierschrank und Geschirrspüler.",
+    "kitchen.cap3":"Alte Holzwand in der Vorratskammer.",
+    "garden.h2":"Der Garten",
+    "garden.num":"IV — Erde & Frucht",
+    "garden.quote":"\u201eFruchtbarer Boden mit Obst und Beeren, auf einem Grundstück von gut 6.500 Quadratmetern.\u201c",
+    "terrace.h2":"Terrassen & Aussicht",
+    "terrace.num":"V — Im Freien",
+    "terrace.cap1":"Eine 30 m² große Terrasse an der Rückseite — beste Abendsonne.",
+    "terrace.cap2":"Vorderterrasse, Morgensonne.",
+    "terrace.quote":"\u201eFreie Sicht, mit Wiesen als nächsten Nachbarn.\u201c",
+    "bath.h2":"Badezimmer",
+    "bath.num":"VI — Renoviert 2025",
+    "bath.cap1":"Dusche und WC mit Zugang zur Morgensonne.",
+    "bath.cap2":"WC und Waschküche, 2025 renoviert.",
+    "cta.eyebrow":"Besichtigung vereinbaren",
+    "cta.h2":"Ein Anwesen, dem man<br>treu bleibt.",
+    "cta.p":"Norra Sandby 4283 wird nach Vereinbarung gezeigt. Melden Sie sich für Fotos, Unterlagen oder eine private Besichtigung.",
+    "cta.btn":"Kontakt aufnehmen",
+    "footer.left":"Norra Sandby 4283 · Schonen, Schweden",
+    "footer.right":"Kaufpreis 155.000 € · Freizeithaus, Eigentum"
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(i18n[lang] && i18n[lang][key]){
+      el.innerHTML = i18n[lang][key];
+    }
+  });
+  document.querySelectorAll('.langs button').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+  });
+  localStorage_safe(lang);
+}
+function localStorage_safe(lang){
+  try{ /* no-op: storage intentionally avoided in this static page */ }catch(e){}
+}
+document.querySelectorAll('.langs button').forEach(b=>{
+  b.addEventListener('click', ()=> setLang(b.getAttribute('data-lang')));
+});
+</script>
+
+</body>
+</html>
